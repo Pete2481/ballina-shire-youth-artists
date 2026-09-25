@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Ballina Shire Youth Artists</title>
+  <meta name="description" content="Get in touch with Ballina Shire Youth Artists. Register to perform, volunteer, sponsor, or just say hello.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-text">
+          Ballina Shire<span>Youth Artists</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#what-we-do">What We Do</a></li>
+        <li><a href="index.html#events">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="index.html#get-involved" class="nav-cta">Get Involved</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== CONTACT PAGE ===== -->
+  <section class="contact-page">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-label">Say Hello</div>
+        <h1 class="section-title">Get in Touch</h1>
+        <p class="section-subtitle">Whether you want to perform, volunteer, sponsor, or just find out more - we'd love to hear from you.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Left: Info Cards -->
+        <div class="contact-info reveal-left">
+          <div class="contact-info-card">
+            <div class="icon">&#128231;</div>
+            <div>
+              <h3>Email Us</h3>
+              <p>Ballinashireyouthartsists@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <div class="icon">&#128205;</div>
+            <div>
+              <h3>Location</h3>
+              <p>Ballina Shire, NSW<br>Northern Rivers Region</p>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <div class="icon">&#128247;</div>
+            <div>
+              <h3>Instagram</h3>
+              <p><a href="https://www.instagram.com/ballinashireyouthartists/" target="_blank" rel="noopener" style="color: var(--coral); border-bottom: 1px dashed var(--coral);">@ballinashireyouthartists</a></p>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <div class="icon">&#127915;</div>
+            <div>
+              <h3>Events &amp; Tickets</h3>
+              <p><a href="https://events.humanitix.com/youth-mic-resonator-music" target="_blank" rel="noopener" style="color: var(--coral); border-bottom: 1px dashed var(--coral);">Humanitix - Youth Mic</a></p>
+            </div>
+          </div>
+
+          <!-- Child Safety Notice -->
+          <div class="safety-notice">
+            <div class="icon">&#128737;&#65039;</div>
+            <div>
+              <p><strong>Child Safety</strong><br>
+              Ballina Shire Youth Artists is committed to the safety and wellbeing of all young people involved in our programs. All volunteers undergo relevant checks and we follow child-safe protocols at every event.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div class="contact-form reveal-right">
+          <h3>Send Us a Message</h3>
+          <form id="contactForm" action="#" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required placeholder="Your first name">
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required placeholder="Your last name">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com">
+            </div>
+
+            <div class="form-group">
+              <label for="enquiryType">I'm interested in...</label>
+              <select id="enquiryType" name="enquiryType">
+                <option value="">Select an option</option>
+                <option value="perform">Performing at an event</option>
+                <option value="volunteer">Volunteering</option>
+                <option value="sponsor">Sponsorship</option>
+                <option value="mentor">Becoming a mentor</option>
+                <option value="booking">Booking us for an event</option>
+                <option value="general">General enquiry</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required placeholder="Tell us a bit about yourself and how you'd like to get involved..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%; text-align: center;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text">Ballina Shire Youth Artists</div>
+          <p>Creating performance opportunities for our local youth across all genres of music.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/ballinashireyouthartists/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html#about">About Us</a>
+          <a href="index.html#what-we-do">What We Do</a>
+          <a href="index.html#events">Events</a>
+          <a href="gallery.html">Gallery</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get Involved</h4>
+          <a href="contact.html">Perform</a>
+          <a href="contact.html">Volunteer</a>
+          <a href="contact.html">Sponsor</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Events</h4>
+          <a href="https://events.humanitix.com/youth-mic-resonator-music" target="_blank" rel="noopener">Humanitix Tickets</a>
+          <a href="index.html#events">Youth Mic</a>
+          <a href="index.html#events">Band Showcase</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ballina Shire Youth Artists. A not-for-profit community program.</p>
+        <p>Website by <a href="#">Pete</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
