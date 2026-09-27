@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Check-In | Ballina Shire Youth Artists</title>
+  <meta name="description" content="Quick event check-in and parental consent form for Ballina Shire Youth Artists events.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-text">
+          Ballina Shire<span>Youth Artists</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#what-we-do">What We Do</a></li>
+        <li><a href="index.html#events">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="checkin.html" class="nav-cta active">Check In</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== CHECK-IN PAGE ===== -->
+  <section class="checkin-page">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-label">Event Check-In</div>
+        <h1 class="section-title">Welcome to the Show!</h1>
+        <p class="section-subtitle">Parents & guardians - please fill out this quick consent form for your child to participate in today's event.</p>
+      </div>
+
+      <div class="checkin-layout">
+        <!-- QR Code Section (for organisers to print/display) -->
+        <div class="checkin-qr reveal-left">
+          <div class="qr-card">
+            <h3>Scan to Check In</h3>
+            <p>Display or print this QR code at your event for quick parent access.</p>
+            <div class="qr-code" id="qrCode">
+              <img id="qrImage" alt="QR Code - Scan to check in" width="200" height="200">
+            </div>
+            <p class="qr-hint">Point your phone camera at the code</p>
+          </div>
+
+          <div class="safety-notice">
+            <div class="icon">&#128737;&#65039;</div>
+            <div>
+              <p><strong>Child Safety</strong><br>
+              All participants under 18 require parental/guardian consent. We are committed to the safety and wellbeing of all young people at our events.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Consent Form -->
+        <div class="checkin-form reveal-right">
+          <h3>Parental Consent Form</h3>
+          <form id="checkinForm" action="https://formspree.io/f/mvkgblzq" method="POST">
+            <input type="hidden" name="_subject" value="Event Check-In Consent Form">
+            <input type="hidden" name="formType" value="Event Check-In">
+
+            <div class="form-group">
+              <label for="childName">Child's Full Name *</label>
+              <input type="text" id="childName" name="childName" required placeholder="Enter child's name">
+            </div>
+
+            <div class="form-group">
+              <label for="childAge">Child's Age *</label>
+              <input type="number" id="childAge" name="childAge" required min="1" max="25" placeholder="Age">
+            </div>
+
+            <div class="form-group">
+              <label for="parentName">Parent/Guardian Name *</label>
+              <input type="text" id="parentName" name="parentName" required placeholder="Your full name">
+            </div>
+
+            <div class="form-group">
+              <label for="parentPhone">Contact Phone *</label>
+              <input type="tel" id="parentPhone" name="parentPhone" required placeholder="Your mobile number">
+            </div>
+
+            <div class="form-group">
+              <label for="eventName">Event</label>
+              <select id="eventName" name="eventName">
+                <option value="Youth Mic">Youth Mic</option>
+                <option value="Band Showcase">Band Showcase</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <!-- Consent Checkboxes -->
+            <div class="consent-section">
+              <h4>Consent</h4>
+
+              <label class="consent-check">
+                <input type="checkbox" name="consentPhotos" value="yes" required>
+                <span class="checkmark"></span>
+                <span>I consent to my child being <strong>photographed</strong> during this event for use on the Ballina Shire Youth Artists website and social media. *</span>
+              </label>
+
+              <label class="consent-check">
+                <input type="checkbox" name="consentVideo" value="yes" required>
+                <span class="checkmark"></span>
+                <span>I consent to my child being <strong>filmed/video recorded</strong> during this event for promotional and social media purposes. *</span>
+              </label>
+
+              <label class="consent-check">
+                <input type="checkbox" name="consentParticipation" value="yes" required>
+                <span class="checkmark"></span>
+                <span>I confirm that I am the parent/legal guardian and give permission for my child to <strong>participate</strong> in this event. *</span>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="emergencyNotes">Any allergies, medical conditions, or notes? (optional)</label>
+              <textarea id="emergencyNotes" name="emergencyNotes" placeholder="e.g. asthma, allergies, or anything we should know..." rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary checkin-submit">Check In</button>
+
+            <p class="form-disclaimer">* Required fields. Your information is kept confidential and used only for event management and child safety purposes.</p>
+          </form>
+
+          <!-- Success message -->
+          <div class="checkin-success" id="checkinSuccess" style="display: none;">
+            <div class="success-icon">&#10004;</div>
+            <h3>All Checked In!</h3>
+            <p>Thanks! Your child is registered for today's event. Have an awesome time!</p>
+            <button class="btn-primary" onclick="resetCheckin()">Check In Another Child</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text">Ballina Shire Youth Artists</div>
+          <p>Creating performance opportunities for our local youth across all genres of music.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/ballinashireyouthartists/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html#about">About Us</a>
+          <a href="index.html#what-we-do">What We Do</a>
+          <a href="index.html#events">Events</a>
+          <a href="gallery.html">Gallery</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get Involved</h4>
+          <a href="contact.html">Perform</a>
+          <a href="contact.html">Volunteer</a>
+          <a href="contact.html">Sponsor</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Events</h4>
+          <a href="https://events.humanitix.com/youth-mic-resonator-music" target="_blank" rel="noopener">Humanitix Tickets</a>
+          <a href="index.html#events">Youth Mic</a>
+          <a href="index.html#events">Band Showcase</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ballina Shire Youth Artists. A not-for-profit community program.</p>
+        <p>Website by <a href="#">Pete</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Generate QR code pointing to this page
+    (function() {
+      var qrImg = document.getElementById('qrImage');
+      if (qrImg) {
+        var pageUrl = window.location.href;
+        qrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(pageUrl);
+      }
+    })();
+
+    // Handle check-in form submission
+    var checkinForm = document.getElementById('checkinForm');
+    if (checkinForm) {
+      checkinForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var form = this;
+        var formData = new FormData(form);
+
+        fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        }).then(function(response) {
+          if (response.ok) {
+            form.style.display = 'none';
+            document.getElementById('checkinSuccess').style.display = 'block';
+          } else {
+            alert('Something went wrong. Please try again or check in with a volunteer.');
+          }
+        }).catch(function() {
+          alert('Connection error. Please check your internet and try again.');
+        });
+      });
+    }
+
+    // Reset form for another child
+    function resetCheckin() {
+      var form = document.getElementById('checkinForm');
+      form.reset();
+      form.style.display = 'block';
+      document.getElementById('checkinSuccess').style.display = 'none';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

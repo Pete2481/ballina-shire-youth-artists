@@ -1508,6 +1508,165 @@ ul {
   text-decoration: underline;
 }
 
+/* ---- Check-In Page ---- */
+.checkin-page {
+  padding-top: 120px;
+  padding-bottom: 80px;
+  background: var(--cream);
+  min-height: 100vh;
+}
+
+.checkin-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 50px;
+  margin-top: 50px;
+  align-items: start;
+}
+
+.qr-card {
+  background: white;
+  padding: 36px;
+  border-radius: 20px;
+  border: 2px dashed var(--mint);
+  text-align: center;
+}
+
+.qr-card h3 {
+  font-family: var(--font-hand);
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+  color: var(--charcoal);
+}
+
+.qr-card > p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.qr-code {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+}
+
+.qr-code img {
+  border-radius: 8px;
+}
+
+.qr-hint {
+  font-family: var(--font-accent);
+  font-size: 0.95rem;
+  color: var(--coral);
+  margin-top: 16px;
+}
+
+.checkin-form {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  border: 2px dashed var(--peach);
+}
+
+.checkin-form h3 {
+  font-family: var(--font-hand);
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+  color: var(--charcoal);
+}
+
+.consent-section {
+  margin: 24px 0;
+  padding: 20px 24px;
+  background: var(--warm-white);
+  border-radius: 12px;
+  border: 1px solid #e0d8cc;
+}
+
+.consent-section h4 {
+  font-family: var(--font-hand);
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+  color: var(--charcoal);
+}
+
+.consent-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.consent-check:last-child {
+  margin-bottom: 0;
+}
+
+.consent-check input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  margin-top: 2px;
+  accent-color: var(--coral);
+  cursor: pointer;
+}
+
+.consent-check .checkmark {
+  display: none;
+}
+
+.checkin-submit {
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 16px 32px;
+}
+
+.form-disclaimer {
+  margin-top: 16px;
+  font-size: 0.8rem;
+  color: #999;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.checkin-success {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.checkin-success .success-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--mint);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--deep-green);
+  margin: 0 auto 24px;
+}
+
+.checkin-success h3 {
+  font-family: var(--font-hand);
+  font-size: 2rem;
+  color: var(--deep-green);
+  margin-bottom: 12px;
+}
+
+.checkin-success p {
+  color: #666;
+  margin-bottom: 24px;
+  font-size: 1.05rem;
+}
+
 /* ---- Placeholder Images ---- */
 .placeholder-img {
   width: 100%;
@@ -1651,6 +1810,9 @@ ul {
   .team-grid { grid-template-columns: repeat(2, 1fr); }
   .venues-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
+  .checkin-layout { grid-template-columns: 1fr; }
+  .checkin-form { padding: 28px 20px; }
+  .consent-section { padding: 16px; }
   .footer-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .footer-bottom { justify-content: center; text-align: center; }
