@@ -98,12 +98,32 @@ document.addEventListener('DOMContentLoaded', function () {
     mailingListForm.addEventListener('submit', function (e) {
       e.preventDefault();
       var name = mailingListForm.querySelector('input[name="name"]').value;
-      mailingListForm.innerHTML =
-        '<div style="padding: 20px 0;">' +
-        '<div style="font-size: 2rem; margin-bottom: 8px;">&#127881;</div>' +
-        '<h3 style="font-family: var(--font-hand); font-size: 1.6rem; margin-bottom: 8px;">You\'re in, ' + name + '!</h3>' +
-        '<p style="color: #666; font-size: 0.95rem;">We\'ll keep you posted on all things BSYA.</p>' +
-        '</div>';
+      var form = mailingListForm;
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function (response) {
+        if (response.ok) {
+          form.innerHTML =
+            '<div style="padding: 20px 0;">' +
+            '<div style="font-size: 2rem; margin-bottom: 8px;">&#127881;</div>' +
+            '<h3 style="font-family: var(--font-hand); font-size: 1.6rem; margin-bottom: 8px;">You\'re in, ' + name + '!</h3>' +
+            '<p style="color: #666; font-size: 0.95rem;">We\'ll keep you posted on all things BSYA.</p>' +
+            '</div>';
+        } else {
+          form.innerHTML =
+            '<div style="padding: 20px 0;">' +
+            '<p style="color: var(--coral);">Something went wrong. Please try again or contact us directly.</p>' +
+            '</div>';
+        }
+      }).catch(function () {
+        form.innerHTML =
+          '<div style="padding: 20px 0;">' +
+          '<p style="color: var(--coral);">Something went wrong. Please try again or contact us directly.</p>' +
+          '</div>';
+      });
     });
   }
 
