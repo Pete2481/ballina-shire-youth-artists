@@ -1800,6 +1800,8 @@ ul {
   .event-card { grid-template-columns: 1fr; }
   .team-profile { grid-template-columns: 1fr !important; text-align: center; }
   .team-profile .team-photo { max-width: 250px; margin: 0 auto; }
+  .featured-sponsor { grid-template-columns: 1fr !important; text-align: center; }
+  .featured-sponsor .value-tag { justify-content: center; }
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }
