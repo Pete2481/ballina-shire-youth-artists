@@ -1214,10 +1214,85 @@ ul {
   color: var(--coral);
 }
 
-/* ---- Venues Section ---- */
+/* ---- Venues & Sponsors Section ---- */
 .venues {
   padding: var(--section-padding);
   background: var(--warm-white);
+}
+
+/* Sponsors Grid */
+.sponsors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.sponsor-card {
+  padding: 32px;
+  background: white;
+  border: 3px solid var(--sky);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sponsor-card:nth-child(2) {
+  border-color: var(--lavender);
+  border-radius: 15px 255px 15px 225px / 225px 15px 255px 15px;
+}
+
+.sponsor-card:nth-child(3) {
+  border-color: var(--mint);
+  border-radius: 225px 15px 255px 15px / 15px 255px 15px 225px;
+}
+
+.sponsor-card:nth-child(4) {
+  border-color: var(--peach);
+  border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+}
+
+.sponsor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.sponsor-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.sponsor-card h3 {
+  font-family: var(--font-hand);
+  font-size: 1.6rem;
+  color: var(--charcoal);
+  margin-bottom: 4px;
+}
+
+.sponsor-role {
+  font-family: var(--font-accent);
+  color: var(--coral);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+.sponsor-card p:last-of-type {
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.sponsor-link {
+  font-family: var(--font-accent);
+  color: var(--coral);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.sponsor-link:hover {
+  color: var(--charcoal);
 }
 
 .venues-grid {
@@ -1802,6 +1877,7 @@ ul {
   .team-profile .team-photo { max-width: 250px; margin: 0 auto; }
   .featured-sponsor { grid-template-columns: 1fr !important; text-align: center; }
   .featured-sponsor .value-tag { justify-content: center; }
+  .sponsors-grid { grid-template-columns: 1fr; }
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }
