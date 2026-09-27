@@ -1639,6 +1639,8 @@ ul {
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .services-grid { grid-template-columns: 1fr; }
   .event-card { grid-template-columns: 1fr; }
+  .team-profile { grid-template-columns: 1fr !important; text-align: center; }
+  .team-profile .team-photo { max-width: 250px; margin: 0 auto; }
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }
