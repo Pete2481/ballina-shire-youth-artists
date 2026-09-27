@@ -1351,6 +1351,51 @@ ul {
   color: var(--charcoal);
 }
 
+/* Helpful Links */
+.helpful-links-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.helpful-link-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px;
+  background: white;
+  border: 2px solid #e8e8e8;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--charcoal);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.helpful-link-card:hover {
+  border-color: var(--sky);
+  transform: translateY(-2px);
+}
+
+.helpful-link-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.helpful-link-card strong {
+  font-family: var(--font-hand);
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.helpful-link-card p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--medium-gray);
+  margin: 0;
+}
+
 .venues-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1934,6 +1979,7 @@ ul {
   .featured-sponsor { grid-template-columns: 1fr !important; text-align: center; }
   .featured-sponsor .value-tag { justify-content: center; }
   .sponsors-grid { grid-template-columns: 1fr; }
+  .helpful-links-grid { grid-template-columns: 1fr; }
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }
