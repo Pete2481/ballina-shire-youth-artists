@@ -92,6 +92,21 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // ---- Mailing List Form Handler ----
+  var mailingListForm = document.getElementById('mailingListForm');
+  if (mailingListForm) {
+    mailingListForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = mailingListForm.querySelector('input[name="name"]').value;
+      mailingListForm.innerHTML =
+        '<div style="padding: 20px 0;">' +
+        '<div style="font-size: 2rem; margin-bottom: 8px;">&#127881;</div>' +
+        '<h3 style="font-family: var(--font-hand); font-size: 1.6rem; margin-bottom: 8px;">You\'re in, ' + name + '!</h3>' +
+        '<p style="color: #666; font-size: 0.95rem;">We\'ll keep you posted on all things BSYA.</p>' +
+        '</div>';
+    });
+  }
+
   // ---- Smooth scroll for anchor links ----
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
