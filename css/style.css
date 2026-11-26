@@ -6,6 +6,16 @@
 /* Google Fonts - hand-drawn / playful feel */
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Patrick+Hand&display=swap');
 
+/* ---- Image Protection ---- */
+img, video {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  pointer-events: auto;
+}
+
 /* ---- CSS Variables ---- */
 :root {
   /* Pastel palette inspired by the poster artwork */
